@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 
 import java.util.List;
 
@@ -20,9 +21,9 @@ public class GifController {
 //        return "home";
 //    }
 
-    @GetMapping("/gif")
-    public String gifDetails(ModelMap modelMap){
-        Gif gif = gifRepository.findByName("android-explosion");
+    @GetMapping("/gif/{name}")
+    public String gifDetails(ModelMap modelMap, @PathVariable String name){
+        Gif gif = gifRepository.findByName(name);
         modelMap.put("gif",gif);
         return "gif-details";
     }
