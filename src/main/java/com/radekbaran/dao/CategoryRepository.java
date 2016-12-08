@@ -8,11 +8,13 @@ import java.util.List;
 
 @Component
 public class CategoryRepository {
+
     private static final List<Category> ALL_CATEGORIES = Arrays.asList(
             new Category(1,"Osoby"),
             new Category(2,"Sport"),
             new Category(3,"Memy")
     );
+
     public List<Category> getAllCategories(){
         return ALL_CATEGORIES;
     }
@@ -24,4 +26,6 @@ public class CategoryRepository {
         }
         return null;
     }
+
+
 }

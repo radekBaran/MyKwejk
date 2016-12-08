@@ -6,16 +6,26 @@ import org.springframework.stereotype.Component;
 public class Gif {
     private String name;
     private String username;
-
     private boolean favorite;
+
+    private Category category;
 
     public Gif() {
     }
 
-    public Gif(String name, String username, boolean favorite) {
+    public Gif(String name, String username, boolean favorite, Category category) {
         this.name = name;
         this.username = username;
         this.favorite = favorite;
+        this.category = category;
+    }
+
+    public Category getCategory() {
+        return category;
+    }
+
+    public void setCategory(Category category) {
+        this.category = category;
     }
 
     public String getName() {
