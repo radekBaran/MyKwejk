@@ -29,7 +29,7 @@ public class CategoryRepository {
 
     public Category getName(String name){
         for(Category c : ALL_CATEGORIES){
-            if(c.getName().equals(name)){
+            if(c.getName().toLowerCase().equals(name.toLowerCase())){
                 return c;
             }
         }

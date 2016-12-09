@@ -45,7 +45,7 @@ public class GifRepository {
     public List<Gif> searchByCategoryName(String name){
         List<Gif> searchGifs = new ArrayList<>();
         for(Gif g : GifRepository.ALL_GIFS){
-            if(g.getCategory().getName().equals(name)){
+            if(g.getCategory().getName().toLowerCase().equals(name.toLowerCase())){
                 searchGifs.add(g);
             }
         }
