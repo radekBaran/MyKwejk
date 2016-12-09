@@ -3,6 +3,7 @@ package com.radekbaran.dao;
 import com.radekbaran.model.Category;
 import org.springframework.stereotype.Component;
 
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
@@ -27,5 +28,13 @@ public class CategoryRepository {
         return null;
     }
 
+    public Category getName(){
+        Category categoryName;
+        for(Category c : ALL_CATEGORIES){
+            c.getName();
+            
+        }
+        return categoryName;
+    }
 
 }

@@ -11,7 +11,7 @@ import java.util.List;
 @Component
 public class GifRepository {
 
-    protected static final List<Gif> ALL_GIFS = Arrays.asList(
+    public static final List<Gif> ALL_GIFS = Arrays.asList(
             new Gif("android-explosion", "Chris Ramacciotti", false,  new Category(3,"Memy")),
             new Gif("ben-and-mike", "Ben Jakuben", true, new Category(1,"Osoby")),
             new Gif("book-dominos", "Craig Dennis", false, new Category(2,"Sport")),
@@ -40,5 +40,15 @@ public class GifRepository {
             }
         }
         return categoryGifs;
+    }
+
+    public List<Gif> searchByCategoryName(String name){
+        List<Gif> searchGifs = new ArrayList<>();
+        for(Gif g : GifRepository.ALL_GIFS){
+            if(g.getCategory().getName().equals(name)){
+                searchGifs.add(g);
+            }
+        }
+        return searchGifs;
     }
 }
