@@ -23,10 +23,10 @@ public class SearchController {
     @GetMapping("/search")
     public String searchByName(@RequestParam(value = "q", required = false, defaultValue = "1") String name,
                                ModelMap modelMap){
-        Category searchCategoryName = (Category) categoryRepository.getName();
+        Category searchCategoryName = categoryRepository.getName(name);
         modelMap.put("category", searchCategoryName);
         List<Gif> categories = gifRepository.searchByCategoryName(name);
-        modelMap.put("gif", categories);
+        modelMap.put("gifs", categories);
         return "category";
     }
 }
